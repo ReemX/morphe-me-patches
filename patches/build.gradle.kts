@@ -23,7 +23,10 @@ kotlin {
 val patchListGeneratorClasspath: Configuration by configurations.creating
 
 dependencies {
-    compileOnly(libs.gson)
+    // Bundled (not compileOnly): the generated util/* classes reference gson at
+    // runtime, and Morphe Manager's patch classloader has no gson unless the bundle
+    // ships it. Without this the bundle loads as 0 patches in Manager.
+    implementation(libs.gson)
     patchListGeneratorClasspath(libs.gson)
 }
 
