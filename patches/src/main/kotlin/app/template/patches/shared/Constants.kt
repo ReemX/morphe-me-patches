@@ -15,7 +15,7 @@ object Constants {
         targets = listOf(
             // Developed and confirmed against this exact version.
             AppTarget(
-                version = "7.17.47"
+                version = "7.20.6"
             ),
             // Best-effort for future versions (content-based fingerprints
             // where the class name is obfuscated).
