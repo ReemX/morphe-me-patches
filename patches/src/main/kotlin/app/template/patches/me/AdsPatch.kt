@@ -100,7 +100,9 @@ val hideAdsPatch = bytecodePatch(
 
         // Layer 3: collapse the shared ad host view.
         mutableClassDefByOrNull("Lcom/nfo/me/android/presentation/views/ads/ViewAdRecyclerPopUp;")?.methods
-            ?.filter { it.returnType == "V" && it.parameterTypes.firstOrNull() == "Lcom/nfo/me/core_utils/ads/main/LovinAdTags;" }
+            // Only setup(LovinAdTags, int): it has local registers. setTag(LovinAdTags) has none, so
+            // writing v0 there clobbers `this` and the class fails verification.
+            ?.filter { it.returnType == "V" && it.parameterTypes.map { p -> p.toString() } == listOf("Lcom/nfo/me/core_utils/ads/main/LovinAdTags;", "I") }
             ?.forEach {
                 it.addInstructions(
                     0,
