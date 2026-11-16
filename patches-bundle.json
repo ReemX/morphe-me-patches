@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-16T22:20:44",
-  "description": "feat: v1.1.0 remove all ads for Me 7.20.6 (app ad gates + AppLovin/AdMob SDK + ad host view)",
-  "download_url": "https://github.com/ReemX/morphe-me-patches/releases/download/v1.1.0/patches-1.1.0.mpp",
+  "created_at": "2026-11-16T22:26:16",
+  "description": "fix: v1.1.1 only collapse ViewAdRecyclerPopUp setup(LovinAdTags, int), setTag verify error crashed the app",
+  "download_url": "https://github.com/ReemX/morphe-me-patches/releases/download/v1.1.1/patches-1.1.1.mpp",
   "signature_download_url": "",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
